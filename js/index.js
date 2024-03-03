@@ -68,10 +68,15 @@ const displayPost = postN =>{
                 </div>
             </div>`;
             postContainer.appendChild(postCard);
+
     });
+
+    //hide loading spinner
+    toggleSpinner(false)
 }
 
 const handleSearch = () =>{
+    toggleSpinner(true);
     const searchField = document.getElementById("news-search");
     const searchText = searchField.value;
     loadNews(searchText);
@@ -79,7 +84,16 @@ const handleSearch = () =>{
 
 
 
+const toggleSpinner =(isLoading) => {
+    const loadingSpinner = document.getElementById("loading-spinner");
+    if(isLoading){
+    loadingSpinner.classList.remove("hidden");
 
+    }
+    else{
+        loadingSpinner.classList.add("hidden");
+    }
+}
 
 
 const letestNews = async() => {
