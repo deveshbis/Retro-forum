@@ -19,7 +19,7 @@
 
 <body class="lg:px-32">
     <header>
-        <div class="navbar bg-base-100 gap-2">
+        <div class="navbar bg-base-100 gap-2 hidden">
             <div class="flex-1">
                 <a class="btn btn-ghost text-3xl font-extrabold">Retro</a>
             </div>
@@ -69,8 +69,8 @@
                                 class="text-[#7D7DFC]">ReTro</span> Forum</h1>
                         <p class="py-6 text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
                         <label class="input input-bordered flex justify-between items-center gap-2 p-2">
-                            <input type="text" class="grow" placeholder="Search here anything" />
-                            <button class="btn btn-active btn-primary -mr-2 rounded-full ">Search</button>
+                            <input type="text" id="news-search" class="grow" placeholder="Search here anything" />
+                            <button onclick="handleSearch()" class="btn btn-active btn-primary -mr-2 rounded-full ">Search</button>
                         </label>
                     </div>
                     <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-12 space-y-6">
@@ -199,7 +199,7 @@
         </section>
 
         <!-- Join Forum  Section-->
-        <section class="mt-10">
+        <section class="mt-10 hidden">
             <div class="hero min-h-screen bg-[#0C0D2D] rounded-[32px] p-2 lg:p-5">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <img src="images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl" />
@@ -214,117 +214,40 @@
         </section>
 
         <!-- Latest Posts Card Section -->
-        <section class="mt-10">
+        <section class="mt-10 hidden">
 
             <h1 class="text-4xl font-extrabold text-center mb-5">Latest Posts </h1>
-            <p class="text-xl text-center space-y-5 mb-3">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+            <p class="text-xl text-center space-y-5 mb-3">Yes, you can run unit tests and view the results directly
+                within the app. The <br> integrated testing features allow for a streamlined .</p>
 
-            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
-                <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
-                    <div
-                        class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-                        <img src="images/joinforum.png"
-                            class="w-full mb-3">
-                        <div class="p-4 pt-2">
-                            <div class="mb-8">
-                                <p class="text-sm text-gray-600 flex items-center gap-2 mb-2"><i
-                                        class="fa-regular fa-calendar"></i> 29 january 2024</p>
-                                <a href="#"
-                                    class="text-gray-900 font-bold text-lg mb-2 inline-block">What
-                                    will a mars habitat force that impact in our daily life!!!</a>
-                                <p class="text-gray-700 text-sm">Yes, you can run unit tests and view the results
-                                    directly within the app..</p>
-                            </div>
-                            <div class="flex items-center">
-                                <a href="#"><img class="w-10 h-10 rounded-full mr-4"
-                                    src=""
-                                    alt="image Loading"></a>
-                                <div class="text-sm">
-                                    <a href="#"
-                                        class="text-gray-900 font-semibold leading-none hover:text-indigo-600">Cameron
-                                        Williamson </a>
-                                    <p class="text-gray-600">Unknown</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-                        <img src="images/joinforum.png"
-                            class="w-full mb-3">
-                        <div class="p-4 pt-2">
-                            <div class="mb-8">
-                                <p class="text-sm text-gray-600 flex items-center gap-2 mb-2"><i
-                                        class="fa-regular fa-calendar"></i> 29 january 2024</p>
-                                <a href="#"
-                                    class="text-gray-900 font-bold text-lg mb-2 inline-block">What
-                                    will a mars habitat force that impact in our daily life!!!</a>
-                                <p class="text-gray-700 text-sm">Yes, you can run unit tests and view the results
-                                    directly within the app..</p>
-                            </div>
-                            <div class="flex items-center">
-                                <a href="#"><img class="w-10 h-10 rounded-full mr-4" src="" alt="image Loading"></a>
-                                <div class="text-sm">
-                                    <a href="#"
-                                        class="text-gray-900 font-semibold leading-none hover:text-indigo-600">Cameron
-                                        Williamson </a>
-                                    <p class="text-gray-600">Unknown</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-                        <img src="images/joinforum.png"
-                            class="w-full mb-3">
-                        <div class="p-4 pt-2">
-                            <div class="mb-8">
-                                <p class="text-sm text-gray-600 flex items-center gap-2 mb-2"><i
-                                        class="fa-regular fa-calendar"></i> 29 january 2024</p>
-                                <a href="#"
-                                    class="text-gray-900 font-bold text-lg mb-2 inline-block">What
-                                    will a mars habitat force that impact in our daily life!!!</a>
-                                <p class="text-gray-700 text-sm">Yes, you can run unit tests and view the results
-                                    directly within the app..</p>
-                            </div>
-                            <div class="flex items-center">
-                                <a href="#"><img class="w-10 h-10 rounded-full mr-4" src="" alt="image Loading"></a>
-                                <div class="text-sm">
-                                    <a href="#"
-                                        class="text-gray-900 font-semibold leading-none hover:text-indigo-600">Cameron
-                                        Williamson </a>
-                                    <p class="text-gray-600">Unknown</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-               </div>
+            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 grid lg:grid-cols-3 grid-cols-1 gap-5" id="letest-container">
+                
             </div>
-            
+
         </section>
 
     </main>
 
     <!-- footer section -->
-    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded hidden">
         <h1 class="text-4xl font-extrabold text-center ">ReTro </h1>
-            <p class="text-xl text-center space-y-5">Discover top social media forum discussions and online communities for engaging <br> digital conversations on trending topics. Join the exchange!</p>
+        <p class="text-xl text-center space-y-5">Discover top social media forum discussions and online communities for
+            engaging <br> digital conversations on trending topics. Join the exchange!</p>
         <nav>
-          <div class="grid grid-flow-col gap-4">
-            <a href=""><i class="fa-brands fa-twitter text-4xl"></i></a>
-            <a href=""><i class="fa-brands fa-facebook text-4xl"></i></a>
-            <a href=""><i class="fa-brands fa-github text-4xl" ></i></a>
-            <a href=""><i class="fa-brands fa-instagram text-4xl"></i></a>
-          </div>
-        </nav> 
+            <div class="grid grid-flow-col gap-4">
+                <a href=""><i class="fa-brands fa-twitter text-4xl"></i></a>
+                <a href=""><i class="fa-brands fa-facebook text-4xl"></i></a>
+                <a href=""><i class="fa-brands fa-github text-4xl"></i></a>
+                <a href=""><i class="fa-brands fa-instagram text-4xl"></i></a>
+            </div>
+        </nav>
         <aside>
-          <p class="text-xl">2017, All Rights Reserved.</p>
+            <p class="text-xl">2017, All Rights Reserved.</p>
         </aside>
-      </footer>
+    </footer>
 
     <script src="js/index.js"></script>
+    <script src="js/oftion.js"></script>
 </body>
 
 </html>
