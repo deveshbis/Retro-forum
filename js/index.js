@@ -21,7 +21,7 @@ const displayPost = postN =>{
         postCard.classList.add("news");
         postCard.innerHTML =  `<div class="flex mt-5 shadow-lg" >
                 <div class="indicator">
-                    <span class="indicator-item badge ${post.isActive?  "bg-green-400":"bg-red-500"}">${post.isActive}</span>
+                    <span class="indicator-item badge ${post.isActive?  "bg-green-400":"bg-red-500"}"></span>
                     <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${post.image}" alt=""></div>
                 </div>
         
@@ -63,7 +63,7 @@ const displayPost = postN =>{
                             </div>
                         </div>
                         <button 
-                        id="msg-btn" class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
+                        class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
                             type="button" aria-label="Like"
                             >
                             <i class="fa-regular fa-message"></i>
@@ -119,7 +119,7 @@ const loadPost = async () => {
 
         divCard.innerHTML = `<div class="flex mt-5 shadow-lg">
         <div class="indicator">
-        <span class="indicator-item badge ${element.isActive ? " bg-green-400" : "bg-red-500"}">${element.isActive}</span>
+        <span class="indicator-item badge ${element.isActive ? " bg-green-400" : "bg-red-500"}"></span>
         <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${element.image}" alt=""></div>
     </div>
     <div class=" p-3">
@@ -156,16 +156,18 @@ const loadPost = async () => {
                 </div>
             </div>
             <button
-                class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
-                type="button" aria-label="Like" id="msg-btn">
+            id="clickButton" class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
+                type="button" aria-label="Like">
                 <i class="fa-regular fa-message"></i>
-            </button>
+            </button> 
         </div>
     </div>
     </div>                    
         `;
         loadContainer.appendChild(divCard);
     });
+
+   
 }
 
 loadPost();
@@ -233,7 +235,10 @@ const letestNews = async() => {
     });
 }
 
-
-
 letestNews();
+
+
+
+
+//Card Count
 
