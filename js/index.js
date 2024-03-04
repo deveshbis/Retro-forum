@@ -62,7 +62,7 @@ const displayPost = postN =>{
                                 <p>${post.posted_time}<span> min</span></p>
                             </div>
                         </div>
-                        <button onclick="myButtonClick(\`${post.title}`, `${post.view_count})" class="bg-red-500">Click</button>
+                        <button onclick="myButtonClick()" class="bg-green-500 rounded-lg p-2 text-white"><i class="fa-regular fa-message"></i></button>
                         
                     </div>
                 </div>
@@ -253,4 +253,3 @@ letestNews();
 
 
 //Card Count
-
