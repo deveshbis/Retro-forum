@@ -62,7 +62,7 @@ const displayPost = postN =>{
                                 <p>${post.posted_time}<span> min</span></p>
                             </div>
                         </div>
-                        <button onclick="myButtonClick()" class="bg-green-500 rounded-lg p-2 text-white"><i class="fa-regular fa-message"></i></button>
+                        <button onclick="myButtonClick(\`${post.title || 'Unknown Title'}\`, ${post.view_count || 0})" class="bg-green-500 rounded-lg p-2 text-white"><i class="fa-regular fa-message"></i></button>
                         
                     </div>
                 </div>
@@ -85,7 +85,12 @@ function myButtonClick(title, viewCount){
     //card add to box
     const titleContainer = document.getElementById("title-container");
     const div = document.createElement('div');
-    div.textContent = `${title} - View Count: ${viewCount}`;
+    
+    
+    const displayTitle = title || 'Unknown Title';
+    const displayViewCount = viewCount !== undefined ? viewCount : 0;
+
+    div.textContent = `${displayTitle} - View Count: ${displayViewCount}`;
     titleContainer.appendChild(div);
 
 }
@@ -183,26 +188,6 @@ const loadPost = async () => {
 }
 
 loadPost();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
