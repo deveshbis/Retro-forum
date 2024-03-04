@@ -35,7 +35,7 @@ const displayPost = postN =>{
                         </div>
                     </div>
                     <div class="">
-                        <h1 class="flex-auto text-lg font-bold text-slate-900 mb-5">
+                        <h1 id="title-set" class="flex-auto text-lg font-bold text-slate-900 mb-5">
                             ${post.title}
                         </h1>
                         <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2 mb-5">
@@ -62,12 +62,8 @@ const displayPost = postN =>{
                                 <p>${post.posted_time}<span> min</span></p>
                             </div>
                         </div>
-                        <button 
-                        class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
-                            type="button" aria-label="Like"
-                            >
-                            <i class="fa-regular fa-message"></i>
-                        </button>
+                        <button onclick="myButtonClick(\`${post.title}`, `${post.view_count})" class="bg-red-500">Click</button>
+                        
                     </div>
                 </div>
             </div>`;
@@ -78,6 +74,26 @@ const displayPost = postN =>{
     //hide loading spinner
     toggleSpinner(false)
 }
+
+
+//mark as read 
+let clickCount = 0;
+function myButtonClick(title, viewCount){
+    clickCount++;
+    document.getElementById("clickCountDisplay").innerText = clickCount;
+
+    //card add to box
+    const titleContainer = document.getElementById("title-container");
+    const div = document.createElement('div');
+    div.textContent = `${title} - View Count: ${viewCount}`;
+    titleContainer.appendChild(div);
+
+}
+
+
+
+
+
 
 const handleSearch = () =>{
     toggleSpinner(true);
@@ -155,11 +171,7 @@ const loadPost = async () => {
                     <p>${element.posted_time}<span> min</span></p>
                 </div>
             </div>
-            <button
-            id="clickButton" class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
-                type="button" aria-label="Like">
-                <i class="fa-regular fa-message"></i>
-            </button> 
+            <button onclick="myButtonClick()" class="bg-green-500 rounded-lg p-2 text-white"><i class="fa-regular fa-message"></i></button>
         </div>
     </div>
     </div>                    
