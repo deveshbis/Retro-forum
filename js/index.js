@@ -1,15 +1,11 @@
 
-let selectCategory = "posts";
-
 const loadNews = async(searchText) => {
-    selectCategory = searchText;
     const response = await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await response.json()
     const postN = data.posts;
     displayPost(postN);
     
 }
-
 
 
 const displayPost = postN =>{
@@ -21,10 +17,9 @@ const displayPost = postN =>{
     
 
     postN.forEach(post => {
-        // console.log(post);
         const postCard = document.createElement("div");
         postCard.classList.add("news");
-        postCard.innerHTML =  `<div class="flex news" >
+        postCard.innerHTML =  `<div class="flex mt-5 shadow-lg" >
                 <div class="indicator">
                     <span class="indicator-item badge ${post.isActive?  "bg-green-400":"bg-red-500"}">${post.isActive}</span>
                     <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${post.image}" alt=""></div>
@@ -67,9 +62,9 @@ const displayPost = postN =>{
                                 <p>${post.posted_time}<span> min</span></p>
                             </div>
                         </div>
-                        <button
-                            class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
-                            type="button" aria-label="Like" id="msg-btn"
+                        <button 
+                        id="msg-btn" class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
+                            type="button" aria-label="Like"
                             >
                             <i class="fa-regular fa-message"></i>
                         </button>
@@ -89,15 +84,18 @@ const handleSearch = () =>{
     const searchField = document.getElementById("news-search");
     const searchText = searchField.value;
     loadNews(searchText);
+ 
 }
 
 
-
+// loading Spinner
 const toggleSpinner =(isLoading) => {
     const loadingSpinner = document.getElementById("loading-spinner");
     if(isLoading){
     loadingSpinner.classList.remove("hidden");
-
+    setTimeout(() => {
+        loadingSpinner.classList.add("hidden");
+      }, 2000);
     }
     else{
         loadingSpinner.classList.add("hidden");
@@ -105,16 +103,104 @@ const toggleSpinner =(isLoading) => {
     
 }
 
-loadNews();
+// loadNews();
 
 
+
+
+const loadPost = async () => {
+    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+    const data = await response.json();
+
+    const loadContainer = document.getElementById("news-container");
+    data.posts.forEach((element) => {
+        const divCard = document.createElement("div");
+        divCard.classList.add("news");
+
+        divCard.innerHTML = `<div class="flex mt-5 shadow-lg">
+        <div class="indicator">
+        <span class="indicator-item badge ${element.isActive ? " bg-green-400" : "bg-red-500"}">${element.isActive}</span>
+        <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${element.image}" alt=""></div>
+    </div>
+    <div class=" p-3">
+        <div class="grid grid-cols-2">
+            <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2 mb-4">
+                <span># </span>${element.category}
+            </div>
+            <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2 mb-4">
+                <span>Author :</span> ${element.author.name}
+            </div>
+        </div>
+        <div class="">
+            <h1 class="flex-auto text-lg font-bold text-slate-900 mb-5">
+                ${element.title}
+            </h1>
+            <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2 mb-5">
+                ${element.description}
+            </div>
+        </div>
+        <hr class="border-dotted mb-5">
+        <div class="flex justify-between  mb-6 text-sm font-medium ">
+            <div class="flex justify-between space-x-5 items-center">
+                <div class="flex items-center gap-1">
+                    <i class="fa-regular fa-message"></i>
+                    <p>${element.comment_count}</p>
+                </div>
+                <div class="flex items-center gap-1">
+                    <i class="fa-regular fa-eye"></i>
+                    <p>${element.view_count}</p>
+                </div>
+                <div class="flex items-center gap-1">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>${element.posted_time}<span> min</span></p>
+                </div>
+            </div>
+            <button
+                class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
+                type="button" aria-label="Like" id="msg-btn">
+                <i class="fa-regular fa-message"></i>
+            </button>
+        </div>
+    </div>
+    </div>                    
+        `;
+        loadContainer.appendChild(divCard);
+    });
+}
+
+loadPost();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Letest Post
 const letestNews = async() => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
     const letdata = await res.json()
     const letestContainer = document.getElementById("letest-container");
 
     letdata.forEach((fullcard) => {
-        // console.log(fullcard);
 
         const div2 = document.createElement("div");
         div2.classList.add("card");

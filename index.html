@@ -18,13 +18,13 @@
 </head>
 
 <body class="lg:px-32">
-    <header>
+    <header class="">
         <div class="navbar bg-base-100 gap-2">
             <div class="flex-1">
                 <a class="btn btn-ghost text-3xl font-extrabold">Retro</a>
             </div>
             <div class="flex-none lg:gap-5">
-                <div class="dropdown dropdown-end">
+                <div class="dropdown dropdown-end tooltip tooltip-bottom" data-tip="Home">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full p-2 bg-gray-100 mydv">
                             <img alt="Tailwind CSS Navbar component" src="images/home.png" />
@@ -33,23 +33,23 @@
                     </div>
 
                 </div>
-                <div class="dropdown dropdown-end">
+                <div class="dropdown dropdown-end tooltip tooltip-bottom" data-tip="pen">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full p-2 bg-gray-100">
                             <img alt="Tailwind CSS Navbar component" src="images/pen.png" />
                         </div>
                     </div>
                 </div>
-                <div class="dropdown dropdown-end">
+                <div class="dropdown dropdown-end tooltip tooltip-bottom" data-tip="add">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full p-2 bg-gray-100">
                             <img alt="Tailwind CSS Navbar component" src="images/addme.png" />
                         </div>
                     </div>
                 </div>
-                <div class="dropdown dropdown-end">
+                <div class="dropdown dropdown-end tooltip tooltip-bottom" data-tip="fleg">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-                        <div class="w-10 rounded-full p-2 bg-gray-100">
+                        <div class=" w-10 rounded-full p-2 bg-gray-100" >
                             <img alt="Tailwind CSS Navbar component" src="images/red-flag.png" />
                         </div>
                     </div>
@@ -70,7 +70,8 @@
                         <p class="py-6 text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
                         <label class="input input-bordered flex justify-between items-center gap-2 p-2">
                             <input type="text" id="news-search" class="grow" placeholder="Search here anything" />
-                            <button onclick="handleSearch()" class="btn btn-active btn-primary -mr-2 rounded-full ">Search</button>
+                            <button onclick="handleSearch()"
+                                class="btn btn-active btn-primary -mr-2 rounded-full ">Search</button>
                         </label>
                     </div>
                     <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-12 space-y-6">
@@ -145,12 +146,12 @@
                     </div>
 
                     <div>
-
+                        <h3></h3>
                     </div>
                 </div>
             </div>
-                
-            
+
+
         </section>
 
         <!-- Join Forum  Section-->
@@ -175,8 +176,9 @@
             <p class="text-xl text-center space-y-5 mb-3">Yes, you can run unit tests and view the results directly
                 within the app. The <br> integrated testing features allow for a streamlined .</p>
 
-            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 grid lg:grid-cols-3 grid-cols-1 gap-5" id="letest-container">
-                
+            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 grid lg:grid-cols-3 grid-cols-1 gap-5"
+                id="letest-container">
+
             </div>
 
         </section>
@@ -200,9 +202,20 @@
             <p class="text-xl">2017, All Rights Reserved.</p>
         </aside>
     </footer>
-
+    <script src="js/optional.js"></script>
     <script src="js/index.js"></script>
-    
+
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
