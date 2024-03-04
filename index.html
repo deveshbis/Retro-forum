@@ -19,7 +19,7 @@
 
 <body class="lg:px-32">
     <header>
-        <div class="navbar bg-base-100 gap-2 hidden">
+        <div class="navbar bg-base-100 gap-2">
             <div class="flex-1">
                 <a class="btn btn-ghost text-3xl font-extrabold">Retro</a>
             </div>
@@ -127,33 +127,34 @@
             <div class="text-center py-20 hidden" id="loading-spinner">
                 <span class="loading loading-dots loading-lg"></span>
             </div>
-                
-            <div class="bg-slate-50 " id="news-container">
 
-                
+            <div class="flex justify-between">
+                <div class="bg-slate-50" id="news-container"></div>
 
-                <!-- <div class="flex justify-between p-5">
+                <div class="flex justify-between p-5">
                     <div>
-                        <div class="grid grid-cols-2">
+                        <div class="grid grid-cols-2 text-xl font-bold">
                             <div>
                                 Title
                             </div>
                             <div class="flex justify-between items-center">
-                                Mark as read <span>(4)</span>
+                                Mark as read <span> (0)</span>
                             </div>
                         </div>
-                        <hr class="border-dashed ">
-                        <div>
+                        <hr class="border-dashed font-semibold">
+                    </div>
 
-                        </div>
+                    <div>
 
                     </div>
-                </div> -->
+                </div>
             </div>
+                
+            
         </section>
 
         <!-- Join Forum  Section-->
-        <section class="mt-10 hidden">
+        <section class="mt-10">
             <div class="hero min-h-screen bg-[#0C0D2D] rounded-[32px] p-2 lg:p-5">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <img src="images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl" />
@@ -168,7 +169,7 @@
         </section>
 
         <!-- Latest Posts Card Section -->
-        <section class="mt-10 hidden">
+        <section class="mt-10">
 
             <h1 class="text-4xl font-extrabold text-center mb-5">Latest Posts </h1>
             <p class="text-xl text-center space-y-5 mb-3">Yes, you can run unit tests and view the results directly
@@ -183,7 +184,7 @@
     </main>
 
     <!-- footer section -->
-    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded hidden">
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
         <h1 class="text-4xl font-extrabold text-center ">ReTro </h1>
         <p class="text-xl text-center space-y-5">Discover top social media forum discussions and online communities for
             engaging <br> digital conversations on trending topics. Join the exchange!</p>
@@ -201,7 +202,7 @@
     </footer>
 
     <script src="js/index.js"></script>
-    <script src="js/oftion.js"></script>
+    
 </body>
 
 </html>

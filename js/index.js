@@ -1,4 +1,8 @@
+
+let selectCategory = "posts";
+
 const loadNews = async(searchText) => {
+    selectCategory = searchText;
     const response = await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await response.json()
     const postN = data.posts;
@@ -6,19 +10,23 @@ const loadNews = async(searchText) => {
     
 }
 
+
+
 const displayPost = postN =>{
 
     const postContainer = document.getElementById("news-container");
 
     postContainer.textContent = " ";
 
+    
+
     postN.forEach(post => {
-        console.log(post);
+        // console.log(post);
         const postCard = document.createElement("div");
         postCard.classList.add("news");
         postCard.innerHTML =  `<div class="flex news" >
                 <div class="indicator">
-                    <span class="indicator-item badge"></span>
+                    <span class="indicator-item badge ${post.isActive?  "bg-green-400":"bg-red-500"}">${post.isActive}</span>
                     <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${post.image}" alt=""></div>
                 </div>
         
@@ -61,7 +69,8 @@ const displayPost = postN =>{
                         </div>
                         <button
                             class="flex-none flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-green-300"
-                            type="button" aria-label="Like">
+                            type="button" aria-label="Like" id="msg-btn"
+                            >
                             <i class="fa-regular fa-message"></i>
                         </button>
                     </div>
@@ -93,7 +102,10 @@ const toggleSpinner =(isLoading) => {
     else{
         loadingSpinner.classList.add("hidden");
     }
+    
 }
+
+loadNews();
 
 
 const letestNews = async() => {
